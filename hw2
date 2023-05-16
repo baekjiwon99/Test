@@ -24,7 +24,7 @@ public class UBERStudent20190967 {
         	case 4:
         		return "WED";
         	case 5:
-        		return "THR";
+        		return "THU";
         	case 6:
         		return "FRI";
         	case 7:
