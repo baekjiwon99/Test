@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+
+import sys
+
+input = sys.argv[1]
+output = sys.argv[2] 
+
+
+with open(input) as datafile:
+
+			data = datafile.read()
+			rows = data.split('\n')
+			genreDic = {}	
+	
+		for row in rows:
+			genreList = row.split('::')[2]
+			genre = genreList.split('|')
+
+			for i in genre:
+				if i not in genreDic:
+					genreDic[i] = 1
+				else:
+					genreDic[i] += 1	
+	
+file = open(output, "wt")
+for key, value in genreDic.items():
+		file.write(key + " " + str(value) + "\n")
+
+file.close() 
